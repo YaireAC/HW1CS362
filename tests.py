@@ -2,79 +2,67 @@ import unittest
 from credit_card_validator import credit_card_validator
 
 
-class Testcredit_card_validator(unittest.TestCase):
+class TestCreditCardValidator(unittest.TestCase):
+    """
+    Return true if valid otherwise false
+    Visa:
+        Prefix(es): 4
+        Length: 16
+    MasterCard:
+        Prefix(es): 51 through 55 and 2221 through 2720 
+        Length: 16
+    American Express:
+        Prefix(es): 34 and 37
+        Length: 15
+    """
 
-#Return true if valid otherwise false
-#       Visa
-# Prefix(es): 4
-# Length: 16
-#       MasterCard
-# Prefix(es): 51 through 55 and 2221 through 2720 
-# Length: 16
-#       American Express
-# Prefix(es): 34 and 37
-# Length: 15
-
-
-    # Example
-    # def test11(self):
-    # """Verifies if Master Cards with valid lengths and invalid check bits returns False
-    # Picked using Category Partition Testing"""
-    # self.assertFalse(credit_card_validator("...."))
-    
     def test1(self):
-        #Empty
+        # Empty
         self.assertFalse(credit_card_validator(""))
 
     def test2(self):
-        #length 14
+        # Length 14
         self.assertFalse(credit_card_validator("34345678901234"))
 
     def test3(self):
-        #doesnt pass algorithm
+        # Doesn't pass algorithm
         self.assertFalse(credit_card_validator("5234567890123456"))
 
     def test4(self):
-        #start with 3 instead of 4
+        # Start with 3 instead of 4
         self.assertFalse(credit_card_validator("3123457890123456"))
 
     def test5(self):
-        #2721 not 2720
+        # 2721 not 2720
         self.assertFalse(credit_card_validator("2721567890123456"))
 
     def test6(self):
-        #length 15
+        # Length 15
         self.assertFalse(credit_card_validator("222140534324887"))
 
     def test820(self):
-        #Just the prefix
+        # Just the prefix
         self.assertFalse(credit_card_validator("34"))
+
     def test899(self):
-        #Just the prefix
+        # Just the prefix
         self.assertFalse(credit_card_validator("37"))
-    
+
     def test111(self):
-        #doesnt pass luhn alg
+        # Doesn't pass Luhn algorithm
         self.assertFalse(credit_card_validator("341111111111111"))
+
     def test121(self):
-        #length 20
+        # Length 20
         self.assertFalse(credit_card_validator("34345678901234567890"))
+
     def test1121(self):
-        #length 10
+        # Length 10
         self.assertFalse(credit_card_validator("3434567890"))
 
-    
     def test1321(self):
-        #
+        # Invalid credit card number
         self.assertFalse(credit_card_validator("12345678901234"))
-    def test1321(self):
-        #
-        self.assertFalse(credit_card_validator("12345678901234"))
-    
-    
-    
-
-
 
 if __name__ == '__main__':
     unittest.main()
