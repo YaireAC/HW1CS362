@@ -10,3 +10,7 @@ class Testcredit_card_validator(unittest.TestCase):
     
     def test1(self):
         self.assertTrue(credit_card_validator("4123456789012345"))
+
+
+if __name__ == '__main__':
+    unittest.main()
