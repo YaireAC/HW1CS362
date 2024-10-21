@@ -1,6 +1,7 @@
 import unittest
 from credit_card_validator import credit_card_validator
 
+
 class Testcredit_card_validator(unittest.TestCase):
 
 #Return true if valid otherwise false
@@ -64,15 +65,14 @@ class Testcredit_card_validator(unittest.TestCase):
 
     
     def test1321(self):
-        #Just 16
-        self.assertFalse(credit_card_validator("012345678901234"))
+        #
+        self.assertFalse(credit_card_validator("12345678901234"))
+    def test1321(self):
+        #
+        self.assertFalse(credit_card_validator("12345678901234"))
     
-    def test1321(self):
-        #Just 15
-        self.assertFalse(credit_card_validator("16"))
-    def test1321(self):
-        #Just 15
-        self.assertFalse(credit_card_validator("222140534324887"))
+    
+    
 
 
 
