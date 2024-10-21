@@ -30,7 +30,7 @@ class Testcredit_card_validator(unittest.TestCase):
         self.assertFalse(credit_card_validator("34345678901234"))
 
     def test3(self):
-        self.assertFalse(credit_card_validator("8123456789012345"))
+        self.assertFalse(credit_card_validator("5234567890123456"))
    
 
 
