@@ -45,10 +45,24 @@ class Testcredit_card_validator(unittest.TestCase):
         #length 15
         self.assertFalse(credit_card_validator("222140534324887"))
 
-    def test8(self):
+    def test54(self):
         #
         self.assertFalse(credit_card_validator("55"))
-   
+    def test(self):
+        #
+        self.assertFalse(credit_card_validator("51"))
+   def test45(self):
+        #
+        self.assertFalse(credit_card_validator("2221"))
+    def test82(self):
+        #
+        self.assertFalse(credit_card_validator("2720"))
+    def test82(self):
+        #
+        self.assertFalse(credit_card_validator("34"))
+    def test81(self):
+        #
+        self.assertFalse(credit_card_validator("37"))
 
 
 if __name__ == '__main__':
