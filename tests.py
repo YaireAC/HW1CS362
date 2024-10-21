@@ -30,7 +30,11 @@ class Testcredit_card_validator(unittest.TestCase):
         self.assertFalse(credit_card_validator("34345678901234"))
 
     def test3(self):
+        #wrong prefix, 52 instead of 51
         self.assertFalse(credit_card_validator("5234567890123456"))
+
+    def test4(self):
+        self.assertFalse(credit_card_validator("3123457890123456"))
    
 
 
