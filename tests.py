@@ -47,7 +47,7 @@ class Testcredit_card_validator(unittest.TestCase):
 
     def test8(self):
         #
-        self.assertFalse(credit_card_validator("4"))
+        self.assertFalse(credit_card_validator("51"))
    
 
 
