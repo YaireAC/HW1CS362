@@ -25,6 +25,10 @@ class Testcredit_card_validator(unittest.TestCase):
         #Empty
         self.assertTrue(credit_card_validator(""))
 
+    def test2(self):
+        #length 14
+        self.assertTrue(credit_card_validator("34345678901234"))
+
    
 
 
