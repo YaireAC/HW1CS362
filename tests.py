@@ -51,6 +51,11 @@ class Testcredit_card_validator(unittest.TestCase):
     def test899(self):
         #Just the prefix
         self.assertFalse(credit_card_validator("37"))
+    
+    def test899(self):
+        #Just the prefix
+        self.assertFalse(credit_card_validator("341111111111111"))
+
 
 
 if __name__ == '__main__':
