@@ -30,7 +30,7 @@ class Testcredit_card_validator(unittest.TestCase):
         self.assertFalse(credit_card_validator("34345678901234"))
 
     def test3(self):
-        #wrong prefix, 52 instead of 51
+        #doesnt pass algorithm
         self.assertFalse(credit_card_validator("5234567890123456"))
 
     def test4(self):
@@ -56,15 +56,23 @@ class Testcredit_card_validator(unittest.TestCase):
         #doesnt pass luhn alg
         self.assertFalse(credit_card_validator("341111111111111"))
     def test121(self):
-        #Just the prefix
+        #length 20
         self.assertFalse(credit_card_validator("34345678901234567890"))
     def test1121(self):
-        #Just the prefix
+        #length 10
         self.assertFalse(credit_card_validator("3434567890"))
-    def test1321(self):
-        #Just the prefix
-        self.assertFalse(credit_card_validator("444444444444444"))
 
+    
+    def test1321(self):
+        #Just 16
+        self.assertFalse(credit_card_validator("01234567890123456"))
+    
+    def test1321(self):
+        #Just 15
+        self.assertFalse(credit_card_validator("0123456789012345"))
+    def test1321(self):
+        #Just 15
+        self.assertFalse(credit_card_validator("15"))
 
 
 
