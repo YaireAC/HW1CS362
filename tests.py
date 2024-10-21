@@ -65,14 +65,14 @@ class Testcredit_card_validator(unittest.TestCase):
     
     def test1321(self):
         #Just 16
-        self.assertFalse(credit_card_validator("01234567890123456"))
+        self.assertFalse(credit_card_validator("012345678901234"))
     
     def test1321(self):
         #Just 15
-        self.assertFalse(credit_card_validator("0123456789012345"))
+        self.assertFalse(credit_card_validator("16"))
     def test1321(self):
         #Just 15
-        self.assertFalse(credit_card_validator("15"))
+        self.assertFalse(credit_card_validator("222140534324887"))
 
 
 
