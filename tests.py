@@ -23,14 +23,14 @@ class Testcredit_card_validator(unittest.TestCase):
     
     def test1(self):
         #Empty
-        self.assertTrue(credit_card_validator(""))
+        self.assertFalse(credit_card_validator(""))
 
     def test2(self):
         #length 14
-        self.assertTrue(credit_card_validator("34345678901234"))
+        self.assertFalse(credit_card_validator("34345678901234"))
 
     def test3(self):
-        self.assertTrue(credit_card_validator("423456789012345a"))
+        self.assertFalse(credit_card_validator("423456789012345a"))
    
 
 
