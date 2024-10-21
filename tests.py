@@ -52,9 +52,19 @@ class Testcredit_card_validator(unittest.TestCase):
         #Just the prefix
         self.assertFalse(credit_card_validator("37"))
     
-    def test899(self):
-        #Just the prefix
+    def test111(self):
+        #doesnt pass luhn alg
         self.assertFalse(credit_card_validator("341111111111111"))
+    def test121(self):
+        #Just the prefix
+        self.assertFalse(credit_card_validator("34345678901234567890"))
+    def test1121(self):
+        #Just the prefix
+        self.assertFalse(credit_card_validator("3434567890"))
+    def test1321(self):
+        #Just the prefix
+        self.assertFalse(credit_card_validator("444444444444444"))
+
 
 
 
