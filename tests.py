@@ -34,7 +34,12 @@ class Testcredit_card_validator(unittest.TestCase):
         self.assertFalse(credit_card_validator("5234567890123456"))
 
     def test4(self):
+        #start with 3 instead of 4
         self.assertFalse(credit_card_validator("3123457890123456"))
+
+    def test5(self):
+        #
+        self.assertFalse(credit_card_validator("000000000000000"))
    
 
 
