@@ -5,51 +5,51 @@ from credit_card_validator import credit_card_validator
 class TestCreditCardValidator(unittest.TestCase):
     
     def test1(self):
-        # Empty
+        """Empty"""
         self.assertFalse(credit_card_validator(""))
         
     def test2(self):
-        # Length 14
+        """length 14"""
         self.assertFalse(credit_card_validator("34345678901234"))
 
     def test3(self):
-        # Doesn't pass algorithm
+        """Doesnt pass algot"""
         self.assertFalse(credit_card_validator("5234567890123456"))
 
     def test4(self):
-        # Start with 3 instead of 4
+        """3 instead 4"""
         self.assertFalse(credit_card_validator("3123457890123456"))
 
     def test5(self):
-        # 2721 not 2720
+        """2721 not 2720"""
         self.assertFalse(credit_card_validator("2721567890123456"))
 
     def test6(self):
-        # Length 15
+        """length 15"""
         self.assertFalse(credit_card_validator("222140534324887"))
 
     def test820(self):
-        # Just the prefix
+       """Just prefix"""
         self.assertFalse(credit_card_validator("34"))
 
     def test899(self):
-        # Just the prefix
+        """prefix"""
         self.assertFalse(credit_card_validator("37"))
     
     def test111(self):
-        # Doesn't pass Luhn algorithm
+        """doesnt pas algorithm"""
         self.assertFalse(credit_card_validator("341111111111111"))
     
     def test121(self):
-        # Length 20
+        """length 20"""
         self.assertFalse(credit_card_validator("34345678901234567890"))
 
     def test1121(self):
-        # Length 10
+        """length 10"""
         self.assertFalse(credit_card_validator("3434567890"))
 
     def test1321(self):
-        # Invalid credit card number
+        """invalid"""
         self.assertFalse(credit_card_validator("12345678901234"))
 
     
