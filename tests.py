@@ -4,10 +4,11 @@ from credit_card_validator import credit_card_validator
 
 class TestCreditCardValidator(unittest.TestCase):
     
+    
     def test1(self):
         """Empty"""
         self.assertFalse(credit_card_validator(""))
-        
+
     def test2(self):
         """length 14"""
         self.assertFalse(credit_card_validator("34345678901234"))
@@ -35,11 +36,11 @@ class TestCreditCardValidator(unittest.TestCase):
     def test899(self):
         """prefix"""
         self.assertFalse(credit_card_validator("37"))
-    
+
     def test111(self):
         """doesnt pas algorithm"""
         self.assertFalse(credit_card_validator("341111111111111"))
-    
+
     def test121(self):
         """length 20"""
         self.assertFalse(credit_card_validator("34345678901234567890"))
@@ -52,6 +53,6 @@ class TestCreditCardValidator(unittest.TestCase):
         """invalid"""
         self.assertFalse(credit_card_validator("12345678901234"))
 
-    
+
 if __name__ == '__main__':
     unittest.main()
