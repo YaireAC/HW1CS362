@@ -3,8 +3,7 @@ from credit_card_validator import credit_card_validator
 
 
 class TestCreditCardValidator(unittest.TestCase):
-    
-    
+
     def test1(self):
         """Empty"""
         self.assertFalse(credit_card_validator(""))
