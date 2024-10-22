@@ -21,16 +21,16 @@ class TestCreditCardValidator(unittest.TestCase):
         self.assertFalse(credit_card_validator("3411111111111118"))
 
     def test5(self):
-        """2721 not 2720        last one"""
+        """2721 not 2720      """
         self.assertFalse(credit_card_validator("56123456789012345"))
 
     def test6(self):
-        """length 15"""
-        self.assertFalse(credit_card_validator("222140534324887"))
+        """"""
+        self.assertFalse(credit_card_validator("222040534324887"))
 
     def test820(self):
         """Just prefix"""
-        self.assertFalse(credit_card_validator("34"))
+        self.assertFalse(credit_card_validator("371234567890123""))
 
     def test899(self):
         """prefix"""
