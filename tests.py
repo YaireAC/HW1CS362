@@ -63,21 +63,31 @@ class TestCreditCardValidator(unittest.TestCase):
         """Verifies if a credit card with invalid prefix & check bit and length returns False
         Picked using Error Guessing"""
         self.assertFalse(credit_card_validator("12345678901234"))
-        
+
     def test13(self):
         """Verifies if a Visa with valid prefix and check bit but invalid length returns False
     Picked using Error Guessing"""
         self.assertFalse(credit_card_validator("411111111111111"))
-        
-    def test13(self):
+
+    def test14(self):
         """Verifies if a MasterCard with valid prefix and check bit but invalid length returns False
     Picked using Error Guessing"""
         self.assertFalse(credit_card_validator("511234567890123"))
 
-    def test13(self):
+    def test15(self):
         """Verifies if a American Express with valid prefix and check bit but invalid length returns False
     Picked using Error Guessing"""
         self.assertFalse(credit_card_validator("34123456789012"))
+    
+    def test16(self):
+        """Verifies if a Visa with valid prefix and length but invalid check bit returns False
+    Picked using Error Guessing"""
+        self.assertFalse(credit_card_validator("4242424242424242"))
+
+    def test16(self):
+        """Verifies if a Visa with valid prefix and length but invalid check bit returns False
+    Picked using Error Guessing"""
+        self.assertFalse(credit_card_validator("4111111111111111"))
 
 
 if __name__ == '__main__':
