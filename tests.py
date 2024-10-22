@@ -30,7 +30,7 @@ class TestCreditCardValidator(unittest.TestCase):
 
     def test820(self):
        """Just prefix"""
-        self.assertFalse(credit_card_validator("34"))
+       self.assertFalse(credit_card_validator("34"))
 
     def test899(self):
         """prefix"""
