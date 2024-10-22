@@ -10,19 +10,19 @@ class TestCreditCardValidator(unittest.TestCase):
 
     def test2(self):
         """length 14"""
-        self.assertFalse(credit_card_validator("34345678901234"))
+        self.assertFalse(credit_card_validator("451525354553437"))
 
     def test3(self):
         """Doesnt pass algot"""
-        self.assertFalse(credit_card_validator("5234567890123456"))
+        self.assertFalse(credit_card_validator("340000000000000"))
 
     def test4(self):
         """3 instead 4"""
-        self.assertFalse(credit_card_validator("3123457890123456"))
+        self.assertFalse(credit_card_validator("3411111111111118"))
 
     def test5(self):
-        """2721 not 2720"""
-        self.assertFalse(credit_card_validator("2721567890123456"))
+        """2721 not 2720        last one"""
+        self.assertFalse(credit_card_validator("56123456789012345"))
 
     def test6(self):
         """length 15"""
