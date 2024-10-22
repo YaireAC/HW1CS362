@@ -4,18 +4,6 @@ from credit_card_validator import credit_card_validator
 
 class TestCreditCardValidator(unittest.TestCase):
     
-    """
-    Return true if valid otherwise false
-    Visa:
-        Prefix(es): 4
-        Length: 16
-    MasterCard:
-        Prefix(es): 51 through 55 and 2221 through 2720 
-        Length: 16
-    American Express:
-        Prefix(es): 34 and 37
-        Length: 15
-    """
     def test1(self):
         # Empty
         self.assertFalse(credit_card_validator(""))
