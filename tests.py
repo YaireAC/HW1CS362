@@ -105,6 +105,25 @@ class TestCreditCardValidator(unittest.TestCase):
     def test_invalid_luhn_checksum(self):
         # Invalid: Luhn checksum fails
         self.assertFalse(credit_card_validator("411111111111112"))
+    def test_bug8_amex_invalid_checksum(self):
+    # Invalid Amex: Luhn checksum fails, but length and prefix are valid
+    self.assertFalse(credit_card_validator("341111111111118"))
+
+    def test_bug8_mastercard_invalid_prefix(self):
+    # Invalid MasterCard: 16 digits, prefix just outside valid range
+    self.assertFalse(credit_card_validator("2721567890123456"))
+
+    def test_bug8_visa_invalid_length(self):
+    # Invalid Visa: 17 digits instead of 16
+    self.assertFalse(credit_card_validator("41111111111111112"))
+
+    def test_bug8_mastercard_upper_bound(self):
+    # Valid MasterCard: 16 digits, highest valid prefix
+    self.assertTrue(credit_card_validator("2720567890123456"))
+
+
+
+
 
 
 
