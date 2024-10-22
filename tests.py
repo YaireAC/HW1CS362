@@ -80,10 +80,31 @@ class TestCreditCardValidator(unittest.TestCase):
         """invalid"""
         self.assertFalse(credit_card_validator("2720567890123454"))
         
-    def test314(self):
-        """invalid"""
-        self.assertFalse(credit_card_validator("111"))
+    def test_valid_american_express(self):
+        # Valid Amex: 15 digits, starts with 34
+        self.assertTrue(credit_card_validator("341111111111111"))
+        # Valid Amex: 15 digits, starts with 37
+        self.assertTrue(credit_card_validator("371111111111111"))
 
+    # Test for invalid American Express number (wrong length)
+    def test_invalid_american_express_length(self):
+        # Invalid Amex: 16 digits
+        self.assertFalse(credit_card_validator("3411111111111111"))
+    
+    # Test for invalid American Express number (wrong prefix)
+    def test_invalid_american_express_prefix(self):
+        # Invalid Amex: 15 digits, wrong prefix
+        self.assertFalse(credit_card_validator("321111111111111"))
+
+    # Test for invalid card number (does not match any issuer)
+    def test_invalid_card_unknown_issuer(self):
+        # Invalid: unknown issuer
+        self.assertFalse(credit_card_validator("6011111111111117"))
+
+    # Test for invalid card number (invalid Luhn checksum)
+    def test_invalid_luhn_checksum(self):
+        # Invalid: Luhn checksum fails
+        self.assertFalse(credit_card_validator("411111111111112"))
 
 
 
