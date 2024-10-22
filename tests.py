@@ -30,7 +30,7 @@ class TestCreditCardValidator(unittest.TestCase):
 
     def test820(self):
         """Just prefix"""
-        self.assertFalse(credit_card_validator("371234567890123""))
+        self.assertFalse(credit_card_validator("371234567890123"))
 
     def test899(self):
         """prefix"""
@@ -38,15 +38,15 @@ class TestCreditCardValidator(unittest.TestCase):
 
     def test111(self):
         """doesnt pas algorithm"""
-        self.assertFalse(credit_card_validator("341111111111111"))
+        self.assertFalse(credit_card_validator("38345678901234"))
 
     def test121(self):
         """length 20"""
-        self.assertFalse(credit_card_validator("34345678901234567890"))
+        self.assertFalse(credit_card_validator("342222222222333"))
 
     def test1121(self):
         """length 10"""
-        self.assertFalse(credit_card_validator("3434567890"))
+        self.assertFalse(credit_card_validator("343734373437343"))
 
     def test1321(self):
         """invalid"""
