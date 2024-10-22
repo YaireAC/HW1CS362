@@ -50,7 +50,23 @@ class TestCreditCardValidator(unittest.TestCase):
 
     def test1321(self):
         """invalid"""
-        self.assertFalse(credit_card_validator("12345678901234"))
+        self.assertFalse(credit_card_validator("5634567890123456"))
+
+    def test13221(self):
+        """invalid"""
+        self.assertFalse(credit_card_validator("6212345678901234"))
+
+    def test112(self):
+        """invalid"""
+        self.assertFalse(credit_card_validator("5712345678901238"))
+        
+    def test1124(self):
+        """invalid"""
+        self.assertFalse(credit_card_validator("37123456789012346"))
+        
+    def test112774(self):
+        """invalid"""
+        self.assertFalse(credit_card_validator("7812345678901230"))
 
 
 if __name__ == '__main__':
